@@ -1,0 +1,12 @@
+VAGRANTFILE_API_VERSION = '2'
+
+Vagrant.configure VAGRANTFILE_API_VERSION do |config|
+  config.vm.box = 'ubuntu/trusty64'
+  config.vm.hostname = 's14g481'
+  config.vm.network :public_network, ip: '192.168.11.40', bridge: 'eth1'
+
+  config.vm.provider :virtualbox do |v|
+    v.memory = 1024
+    v.cpus = 1
+  end
+end
