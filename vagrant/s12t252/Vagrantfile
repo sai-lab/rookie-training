@@ -9,4 +9,8 @@ Vagrant.configure VAGRANTFILE_API_VERSION do |config|
     v.memory = 1024
     v.cpus = 1
   end
+
+  config.vm.provision 'ansible' do |ansible|
+    ansible.playbook = 'apache.yml'
+  end
 end
