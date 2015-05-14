@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>{{ ansible_hostname }}</title>
+  </head>
+  <body>
+    <ul>
+      {% for i in ansible_interfaces %}
+      <li>{{ i }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
