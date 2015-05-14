@@ -1,0 +1,10 @@
+<head>
+  <title>
+    {{ ansible_eth1.ipv4.address }}
+  </title>
+  <body>
+    {% for i  in ansible_date_time %}
+      {{ i }}
+    {% endfor %}
+  </body>
+</head>
