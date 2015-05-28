@@ -1,6 +1,8 @@
 ---
 - hosts: all
   sudo: yes
+  vars:
+    hoge  : s12t230_____
   gather_facts: yes
   tasks:
     - debug   : msg="hostname = {{ ansible_hostname }}"
@@ -9,3 +11,4 @@
     - service : name=apache2 state=restarted
     - shell   : echo "hoge"  > /var/www/html/index.html 
     - template: src=index.html.j2 dest=/var/www/html/index.html
+    - include : editor.yml 
