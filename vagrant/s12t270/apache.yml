@@ -6,5 +6,8 @@
     - debug: msg="hostname = {{ ansible_hostname }}"
     - debug: msg="eth1.ipv4.address = {{ ansible_eth1.ipv4.address }}"
     - apt: name=apache2 state=present
+    - name: put index.html
+      template: src=./index.html.j2 
+                dest=/var/www/html/index.html
     - service: name=apache2 state=restarted    
-    - shell: echo "aaaaa" >> /var/www/html/index.html
+ 
