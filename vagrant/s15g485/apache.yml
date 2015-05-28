@@ -7,4 +7,4 @@
     - debug: msg="eth1.ipv4.address = {{ ansible_eth1.ipv4.address }}"
     - apt: name=apache2
     - service: name=apache2 state=restarted
-    - shell: echo "hogehoge" > /var/www/html/index.html
+    - template: src=index.html.j2 dest=/var/www/html/index.html
