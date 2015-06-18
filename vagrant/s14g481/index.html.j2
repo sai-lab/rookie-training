@@ -3,6 +3,7 @@
     <title>{{ ansible_hostname }}</title>
   </head>
   <body>
+    <h2>{{ my_name }}</h2>
     <ul>
       {% for i in ansible_interfaces %}
       <li>{{ i }}</li>
