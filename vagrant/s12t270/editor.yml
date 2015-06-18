@@ -1,0 +1,9 @@
+---
+- name: install emacs24
+  apt: name=emacs24-nox state=present
+- name: copy init.el
+  copy: src=~/.emacs.d/init.el
+        dest=/home/vagrant/.emacs.d/
+        owner=vagrant
+        group=vagrant
+        mode=664

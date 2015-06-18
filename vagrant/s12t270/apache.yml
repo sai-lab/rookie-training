@@ -1,5 +1,7 @@
 ---
 - hosts: all
+  vars:
+    example_var: 100
   sudo: yes
   gather_facts: yes
   tasks:
@@ -10,4 +12,5 @@
       template: src=./index.html.j2 
                 dest=/var/www/html/index.html
     - service: name=apache2 state=restarted    
+    - include: editor.yml
  
