@@ -2,9 +2,12 @@
 - hosts: all
   sudo: yes
   gather_facts: yes
+  vars:
+    run_date: "28/05/2015"
   tasks:
-    - debug: msg="hostname = {{ ansible_hostname }}"
-    - debug: msg="eth1.ipv4.address = {{ ansible_eth1.ipv4.address }}"
+    #- debug: msg="hostname = {{ ansible_hostname }}"
+    #- debug: msg="eth1.ipv4.address = {{ ansible_eth1.ipv4.address }}"
+    - include: editor.yml
     - apt: name=apache2
     - service: name=apache2 state=restarted
     - template: src=index.html.j2 dest=/var/www/html/index.html
