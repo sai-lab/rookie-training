@@ -1,0 +1,12 @@
+---
+- hosts: all
+  sudo: yes
+  gather_facts: yes
+  vars:
+      message: HELLOWORLD
+  tasks:
+    - debug: msg="hostname = {{ ansible_hostname }}"
+    - debug: msg="eth1.ipv4.address = {{ ansible_eth1.ipv4.address }}"
+    - include: editor.yml
+    - service: name=apache2 state=restarted    
+    - template: src=index.html.j2 dest=/var/www/html/index.html
