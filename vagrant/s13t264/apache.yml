@@ -1,0 +1,11 @@
+---
+- hosts: all
+  sudo: yes
+  gather_facts: yes
+  tasks:
+  - name: Apt install apache
+    apt: name=apache2
+  - name: service restart
+    service: name=apache2 state=restarted
+  - name: redirect to index
+    shell: echo "hogehoge" > /var/www/html/index.html
