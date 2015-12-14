@@ -2,6 +2,11 @@
 - hosts: all
   sudo: yes
   gather_facts: yes
+  vars:
+    user_names:
+      - "hoge"
+      - "fuga"
+      - "moge"                            
   tasks:
   - name: Apt install apache
     apt: name=apache2
@@ -9,3 +14,8 @@
     service: name=apache2 state=restarted
   - name: redirect to index
     shell: echo "hogehoge" > /var/www/html/index.html
+    - name: play template module
+      template:
+        src=index.html.j2
+        dest=/var/www/html/index.html
+                    
