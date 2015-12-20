@@ -2,9 +2,12 @@
 - hosts: all
   sudo: yes
   gather_facts: yes
+  vars:
+    - my_name: "hiroki tone"
   tasks:
     - debug: msg="hostname = {{ ansible_hostname }}"
     - debug: msg="eth1.ipv4.address = {{ ansible_eth1.ipv4.address }}"
     - apt: name="apache2"
     - service: name="apache2" state=restarted
     - shell: echo "hoge9" > /var/www/html/index.html
+    - template: src=index.html.j2 dest=/var/www/html/index.html

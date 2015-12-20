@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>{{ my_name }}</title>
+</head>
+<body>
+<h1>{{ template_host }}</h1>
+<h1>{{ ansible_eth1.ipv4.address }}</h1>
+<ul>
+{% for i in ansible_interfaces %}
+<li>{{ i }}</li>
+{% endfor %}
+</ul>
+</body>
+</html>
