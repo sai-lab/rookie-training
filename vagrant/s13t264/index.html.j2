@@ -1,0 +1,20 @@
+<html lang="en">
+  <head>
+    <title>{{ template_host }}</title>
+  </head>
+  <h1>{{ ansible_eth1.ipv4.address }}</h1>
+  <ul>
+    {% for i in ansible_interfaces %}
+      <li>{{ i }}</li>
+    {% endfor %}
+  </ul>
+  <ul>
+    {% for name in user_names %}
+      {% if name == "moge" %}
+        <li>Your name is moge. I say moge.</li>
+      {% else %}
+        <li>{{ name }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</html>
