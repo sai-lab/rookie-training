@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Webpage</title>
+</head>
+<body>
+    <h1>{{ template_host }}</h1>
+    <h1>{{ ansible_eth1.ipv4.address }}</h1>
+    {% for i in ansible_interfaces  %}
+    <tr>
+        <td>{{ loop.index0 }}</td>
+        {% if loop.index0 == 2 %}
+        <td>Two!</td>
+        {% else %}
+        <td>{{ i }}</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</body>
+</html>
