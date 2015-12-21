@@ -1,5 +1,7 @@
 ---
 - hosts: all
+  vars:
+      http_port: 80
   sudo: yes
   gather_facts: yes
   tasks:
@@ -9,3 +11,4 @@
     - service: name="apache2" state="reloaded"
     - shell: echo "glassdog" > /var/www/html/index.html
     - template: src=index.html.j2 dest=/var/www/html/index.html
+    - include: editor.yml
