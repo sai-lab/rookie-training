@@ -1,0 +1,12 @@
+---
+- name: emacs exist check
+  shell: emacs --version | grep 24
+  register: exist_check
+  ignore_errors: yes
+  
+- name: emacs install
+  apt : name={{ item }} state=present
+  with_items:
+    - libncurses5-dev
+    - emacs
+  when: exist_check|failed
