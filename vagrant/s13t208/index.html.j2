@@ -4,6 +4,7 @@
 <body>
     <h1>{{ template_host }}</h1>
     <h1>{{ ansible_eth1.ipv4.address }}</h1>
+    <h1>{{ mysql_port }}</h1>
     {% for i in ansible_interfaces  %}
     <tr>
         <td>{{ loop.index0 }}</td>
