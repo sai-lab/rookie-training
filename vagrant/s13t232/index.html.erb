@@ -1,0 +1,5 @@
+<% for n in 1..3 do %>
+    <% if n == 1 || n == 2 %>
+        Hello, <%= node['hostname'] %>
+    <% end %>
+<% end %>
