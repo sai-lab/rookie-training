@@ -1,0 +1,16 @@
+Hello, <%= @message %> from <%= node[:hostname] %>
+<table border="1">
+  <tr><td>platform</td><td><%= node[:platform] %></td></tr>
+  <tr><td>platform_version</td><td><%= node[:platform_version] %></td></tr>
+  <tr><td>virtualization</td><td><%= node[:virtualization][:system] %></td></tr>
+</table>
+
+<table border="1">
+  <% node[:memory].each do |key, value| %>
+      <% if key == 'swap' %>
+        <% next %>
+      <% else %>
+      <tr><td><%= key %></td><td><%= value %></td></tr>
+      <% end %>
+  <% end %>
+</table>

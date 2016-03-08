@@ -1,3 +1,5 @@
+# -*- mode: ruby -*-
+
 VAGRANTFILE_API_VERSION = '2'
 
 Vagrant.configure VAGRANTFILE_API_VERSION do |config|
@@ -10,7 +12,8 @@ Vagrant.configure VAGRANTFILE_API_VERSION do |config|
     v.cpus = 1
   end
 
-  config.vm.provision 'ansible' do |ansible|
-    ansible.playbook = 'apache.yml'
+  config.vm.provision 'itamae' do |itamae|
+    itamae.sudo = true
+    itamae.recipes = ['apache.rb']
   end
 end
