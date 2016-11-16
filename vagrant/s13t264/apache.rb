@@ -1,12 +1,13 @@
-package 'apache2' do
-  action :install
-end
+package "apache2"
 
-service 'apache2' do
+service "apache2" do
   action [:enable, :reload]
 end
 
-execute 'create default index.html' do
-  command "echo s13t264 > /var/www/html/index.html"
-  only_if "test -e /var/www/html/index.html"
+template "/var/www/html/index.html" do
+  action :create
+  user 'root'
+  group 'root'
+  mode '644'
+  variables(message: "World")
 end
