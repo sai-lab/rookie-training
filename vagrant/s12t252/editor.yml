@@ -1,2 +1,0 @@
-- apt: name=apache2 state=present
-- apt: name=emacs state=present
