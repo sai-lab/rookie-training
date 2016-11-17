@@ -41,3 +41,10 @@ Gitに、GitHubに登録したメールアドレスと名前(英語)を設定す
 プルリクエストのタイトルは，学籍番号とIssueID(例: `s00t000 #1`)とする。  
 本文には、研修の作業内容や質問、感想や反省を書く。  
 研修の担当者(院生など)がプルリクエストを確認し、マージや、不足があればコメントする。
+
+#### 参考資料
+
+- [ディレクトリ構造](https://github.com/SLP-KBIT/RookieLesson/blob/master/lesson000/section01.md)  
+  ディレクトリ構造等で一部，こちらのディレクトリ構造を参考にしています．
+
+- [gitのpush.defaultに関するノウハウ - Qiita](http://qiita.com/awakia/items/6aaea1ffecba725be601)
