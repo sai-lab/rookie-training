@@ -1,3 +1,0 @@
----
-- apt: name=vim update_cache=yes state=latest
-- copy: src=/home/uchiyu/.vimrc dest=/home/vagrant/.vimrc
