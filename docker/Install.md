@@ -7,9 +7,10 @@ rookieサーバにログインして，以前作成したVMを起動してくだ
 ```
 cd ~/vagrant
 vagrant up
+vagrnat ssh
 ```
 
-Dockerをインストールするためのシェルスクリプトが公開されているのでそれを使います.  
+Dockerをインストールするためのシェルスクリプトが公開されているのでそれを使います.
 Ubuntuだけかもしれません.要検証.
 
 ```
@@ -51,5 +52,5 @@ sudo status docker
 
 ---
 
-次のセクション [section03 : 公開イメージの利用](./PublicImage.md) へ進む.  
+次のセクション [section03 : 公開イメージの利用](./PublicImage.md) へ進む.
 [README](./README.md) に戻る．
