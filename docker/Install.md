@@ -21,6 +21,8 @@ wget -qO- https://get.docker.com/ | sh
 
 ```
 sudo usermod -aG docker vagrant
+exit
+vagrant ssh
 ```
 
 Dockerを起動します.
