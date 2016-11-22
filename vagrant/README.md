@@ -1,44 +1,32 @@
-## Vagrant
+# Vagrant入門
 
-[Vagrant](https://www.vagrantup.com/)とは、仮想環境を構築するためのOSSである。  
-[VirtualBox](https://www.virtualbox.org/)や[KVM](http://www.linux-kvm.org/)などの仮想化ソフトウェアに対応している。
+簡単に仮想環境を構築できることで人気の  
+仮想化ソフトウェアラッパーツールVagrantの入門講座です．
 
-下記のような`Vagrantfile`と呼ばれるRubyスクリプトに、構成情報を記述する。  
-`Vagrantfile`には割り当てるCPUやメモリの量、ネットワークの設定などが含まれる。  
-Vagrantは`Vagrantfile`を基に、仮想環境の構築から設定までを自動的に行うことができる。
+# 目次
 
-    VAGRANTFILE_API_VERSION = '2'
-    
-    Vagrant.configure VAGRANTFILE_API_VERSION do |config|
-      config.vm.box = 'ubuntu/trusty64'
-      config.vm.hostname = 's00t000'
-      config.vm.network :public_network, ip: '192.168.11.40', bridge: 'eth1'
-    
-      config.vm.provider :virtualbox do |v|
-        v.memory = 1024
-        v.cpus = 1
-      end
-    end
+1. [仮想マシンとは](./VirtualMachine.md)
+2. [Vagrantとは](./Vagrant.md)
+3. [Vagrantを使ってみよう](./StartVagrant.md)
+4. [Vagrantのライフサイクル](./LifeCycle.md)
+5. [Vagrantユーザについて](./VagrantUser.md)
+6. [共有フォルダについて](./SyncedFolder.md)
+6. [ネットワークを切り替えてみよう](./Network.md)
+7. [複数台起動してみよう](./Multi.md)
+8. [Shellによるプロビジョニング](./ShellProvisioning.md)
+9. [プラグインについて](./Plugin.md)
 
-`vagrant`コマンドを用いて、仮想環境を操作する。
+# 付録
+1. [コマンド一覧](./Commands.md)
+2. [仮想化ソフトウェアの種類](./SoftwareType.md)
+3. [類似ソフトウェア](./Similarity.md)
+4. [関連ツール](./Relation.md)
+5. [インストール方法](./Install.md)
 
-    $ vagrant up       # 作成・起動
-    $ vagrant ssh      # 接続
-    $ vagrant halt     # 停止
-    $ vagrant destroy  # 削除
+# 参考資料
 
-#### ネットワーク設定の注意点
-
-Vagrantのネットワーク設定には、下記の3種類がある。
-
-  - プライベートネットワーク: ホストOSとゲストOS間でのみ通信
-  - ポートフォワーディング: ホストOSの特定ポートへの接続をゲストOSに転送
-  - パブリックネットワーク: ゲストOSがホストOSと同一のネットワークに接続
-
-研究室のサーバでパブリックネットワークを用いる場合、設定に注意する。  
-ブリッジに使用するホストOSのネットワークインタフェースを`eth1`に設定する。  
-(`eth0`は学内ネットワーク、`eth1`は研究室内ネットワークに接続している。)
-
-    config.vm.network :public_network, bridge: 'eth1'
-
-`eth0`を使用するとDHCP認証で弾かれ、ネットワークに接続できない。
+- [Vagrant](https://www.vagrantup.com/)
+- [サーバ仮想化について](https://thinkit.co.jp/free/tech/26/1/1.html)
+- [5分で解る!!今更人に聞けない仮想マシンとは?](https://boxil.jp/others/a1300)
+- [Vagrant体験入門ハンズオンの資料を公開します](http://www.1x1.jp/blog/2014/04/vagrant-handson-in-devlove-kansai.html)
+- [ホスト型とハイパーバイザ型の違いは何？](https://thinkit.co.jp/story/2012/10/17/3722)
